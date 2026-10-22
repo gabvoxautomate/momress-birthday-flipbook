@@ -47,7 +47,7 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 .reader { padding: 1rem clamp(.7rem, 3vw, 2rem) 3.5rem; animation: rise-in .8s both; }
 .reader-heading { text-align: center; margin: 0 auto 2rem; }
 .reader-heading h2 { color: var(--green); font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.5rem); margin: 0; }
-.book-shell { width: min(100%, 860px); margin: 0 auto; perspective: 2200px; position: relative; filter: drop-shadow(0 28px 28px rgba(28,37,30,.13)); }
+.book-shell { width: min(100%, 860px); margin: 0 auto; perspective: 2200px; position: relative; z-index: 1; filter: drop-shadow(0 28px 28px rgba(28,37,30,.13)); }
 .book-back { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, #eee7d8 0 2px, #d9cdb7 2px 3px); border-radius: 5px 10px 10px 5px; transform: translate(8px, 5px) translateZ(-2px); box-shadow: inset -9px 0 0 rgba(0,0,0,.12); }
 .book { width: 100%; aspect-ratio: 0.72; min-height: 510px; position: relative; transform-style: preserve-3d; margin: 0 auto; touch-action: pan-y; }
 .book::before { content: ""; position: absolute; z-index: 40; inset: 0 auto 0 0; width: 13px; pointer-events: none; background: linear-gradient(90deg, rgba(21,31,25,.3), rgba(21,31,25,.08) 48%, transparent); }
@@ -110,8 +110,8 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
 .credits-signature { color: #f1d89f; font-family: var(--serif); font-size: 1.6rem; margin: .7rem 0; }
 .credits-small { color: #c8c4b8; font-size: .68rem; letter-spacing: .07em; margin-top: 1rem; }
 .text-button { color: #e6d5ad; background: transparent; border: 0; border-bottom: 1px solid rgba(230,213,173,.5); padding: .6rem .2rem; margin-top: 1.1rem; cursor: pointer; }
-.reader-controls { width: min(100%, 860px); margin: 1.5rem auto 0; display: grid; grid-template-columns: 1fr minmax(100px, 1.2fr) 1fr; align-items: center; gap: .6rem; }
-.nav-button { background: transparent; border: 1px solid rgba(23,61,50,.2); color: var(--green); border-radius: 3px; min-height: 44px; padding: .65rem .8rem; cursor: pointer; }
+.reader-controls { position: relative; z-index: 60; isolation: isolate; width: min(100%, 860px); margin: 1.5rem auto 0; display: grid; grid-template-columns: 1fr minmax(100px, 1.2fr) 1fr; align-items: center; gap: .6rem; }
+.nav-button { position: relative; z-index: 1; background: var(--paper); border: 1px solid rgba(23,61,50,.42); color: var(--green); border-radius: 4px; min-height: 44px; padding: .65rem .8rem; cursor: pointer; box-shadow: 0 3px 10px rgba(20,34,28,.1); font-weight: 600; }
 .nav-button:disabled { opacity: .35; cursor: not-allowed; }
 #next-page { background: var(--green); color: white; border-color: var(--green); justify-self: end; }
 .page-status { display: flex; flex-direction: column; gap: .55rem; align-items: center; color: #77766e; font-size: .7rem; }
@@ -176,9 +176,9 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
   .credits-small { font-size: .49rem; margin-top: .35rem; }
   .text-button { min-height: 38px; margin-top: .3rem; padding: .35rem .2rem; font-size: .7rem; }
   .page-number { right: .55rem; bottom: .35rem; font-size: .48rem; }
-  .reader-controls { grid-template-columns: 42px minmax(0, 1fr) 42px; gap: .35rem; margin: .25rem auto 0; }
-  .nav-button { min-width: 42px; min-height: 42px; padding: .35rem; font-size: .72rem; }
-  .nav-button span { display: none; }
+  .reader-controls { grid-template-columns: minmax(76px, auto) minmax(0, 1fr) minmax(76px, auto); gap: .35rem; margin: .25rem auto 0; }
+  .nav-button { min-width: 76px; min-height: 44px; padding: .35rem .45rem; font-size: .68rem; white-space: nowrap; }
+  .nav-button span { display: inline; }
   .page-status { gap: .25rem; font-size: .57rem; }
   .progress-track { width: min(100%, 90px); }
   .gesture-hint { display: none; }
