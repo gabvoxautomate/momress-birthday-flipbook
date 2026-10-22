@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d32">
+  <meta name="description" content="A birthday book celebrating Momress, her faith, and the love she shares with her family.">
+  <title>Momress — A Birthday Wrapped in Grace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#book-stage">Skip to the birthday book</a>
+  <main class="experience">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Momress birthday book home">M<span>✦</span></a>
+      <p class="topbar-label">A birthday tribute made with love</p>
+      <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+        <span class="music-icon" aria-hidden="true">♫</span><span id="music-label">Play music</span>
+      </button>
+    </header>
+
+    <section class="intro" id="intro" aria-labelledby="intro-title">
+      <div class="intro-ornament" aria-hidden="true">✦</div>
+      <p class="eyebrow">A SPECIAL BIRTHDAY EDITION</p>
+      <h1 id="intro-title">For <em>Momress</em></h1>
+      <p class="intro-subtitle">A Birthday Wrapped in Grace</p>
+      <p class="intro-copy">A little book celebrating a beautiful life, a faithful heart, and the love that surrounds you.</p>
+      <button id="open-book" class="primary-button" type="button">Open Your Book <span aria-hidden="true">↗</span></button>
+      <p class="intro-note">Made with love by the Media Team</p>
+    </section>
+
+    <section class="reader hidden" id="book-stage" aria-label="Interactive birthday book">
+      <div class="reader-heading">
+        <p class="eyebrow">FOR MOMRESS, WITH LOVE</p>
+        <h2 id="reader-title" tabindex="-1">A story worth celebrating.</h2>
+      </div>
+      <div class="book-shell" id="book-shell">
+        <div class="book-back" aria-hidden="true"></div>
+        <div class="book" id="book" aria-label="Birthday book pages" aria-live="off">
+          <article class="page cover-page" data-page="0" aria-label="Book cover">
+            <div class="cover-inner">
+              <div class="cover-rule"></div>
+              <p class="cover-kicker">A SPECIAL BIRTHDAY EDITION</p>
+              <div class="cover-star" aria-hidden="true">✦</div>
+              <h2>Momress</h2>
+              <p class="cover-subtitle">A Birthday<br>Wrapped in Grace</p>
+              <div class="cover-bottom-rule"></div>
+              <p class="cover-credit">A keepsake made with love</p>
+              <p class="cover-year">FAITH · FAMILY · GRATITUDE</p>
+            </div>
+          </article>
+
+          <article class="page dedication-page" data-page="1" aria-label="Birthday dedication">
+            <div class="page-content centered">
+              <p class="eyebrow">A NOTE FOR YOU</p>
+              <span class="page-flourish" aria-hidden="true">✦</span>
+              <h2>Today, we celebrate <em>you.</em></h2>
+              <p>Momress, may this new year of your life bring fresh strength, deep peace, renewed joy, and beautiful reminders of God's faithfulness.</p>
+              <p>May you continue to be surrounded by love, guided by grace, and strengthened for every good thing ahead.</p>
+              <p class="signature">With love and warm birthday wishes</p>
+            </div>
+            <span class="page-number">01</span>
+          </article>
+
+          <article class="page photo-page portrait-page" data-page="2" aria-label="A woman worth celebrating">
+            <div class="page-content">
+              <p class="eyebrow">CHAPTER ONE</p>
+              <h2>A woman worth <em>celebrating.</em></h2>
+              <div class="photo-frame portrait-frame"><img src="assets/portrait.jpg" alt="Momress speaking at a lectern" width="1152" height="768" loading="lazy"></div>
+              <p class="caption">Today is a moment to honour your life, your heart, and the blessing of having you in the lives of those around you.</p>
+            </div>
+            <span class="page-number">02</span>
+          </article>
+
+          <article class="page faith-page" data-page="3" aria-label="Grace for the journey">
+            <div class="page-content centered">
+              <p class="eyebrow">CHAPTER TWO</p>
+              <div class="faith-photo photo-frame"><img src="assets/faith.jpg" alt="Momress in a moment of reflection or worship" width="800" height="533" loading="lazy"></div>
+              <h2>Grace for the <em>journey.</em></h2>
+              <p>May your walk with God continue to be marked by faith, wisdom, compassion, and the quiet confidence that He is with you in every season.</p>
+              <blockquote>“The Lord bless thee, and keep thee.”<cite>Numbers 6:24 · KJV</cite></blockquote>
+            </div>
+            <span class="page-number">03</span>
+          </article>
+
+          <article class="page photo-page landscape-page" data-page="4" aria-label="The gift of family">
+            <div class="page-content">
+              <p class="eyebrow">CHAPTER THREE</p>
+              <h2>The gift of <em>family.</em></h2>
+              <div class="photo-frame landscape-frame"><img src="assets/family.jpg" alt="Momress with Shepo and Moferejesu" width="1152" height="768" loading="lazy"></div>
+              <p class="caption">May the love you share at home keep growing through the ordinary days, the joyful milestones, and every memory still waiting to be made.</p>
+            </div>
+            <span class="page-number">04</span>
+          </article>
+
+          <article class="page photo-page portrait-page" data-page="5" aria-label="A love to treasure">
+            <div class="page-content">
+              <p class="eyebrow">CHAPTER FOUR</p>
+              <h2>A love to <em>treasure.</em></h2>
+              <div class="photo-frame portrait-frame"><img src="assets/couple.jpg" alt="Momress and her husband Shepo sharing an affectionate moment" width="768" height="1152" loading="lazy"></div>
+              <p class="caption">Celebrating companionship, shared memories, and the love that continues to write your story together.</p>
+            </div>
+            <span class="page-number">05</span>
+          </article>
+
+          <article class="page photo-page landscape-page" data-page="6" aria-label="The beauty of motherhood">
+            <div class="page-content">
+              <p class="eyebrow">CHAPTER FIVE</p>
+              <h2>The beauty of <em>motherhood.</em></h2>
+              <div class="photo-frame landscape-frame"><img src="assets/birthday.jpg" alt="Momress at Moferejesu's first birthday celebration" width="954" height="768" loading="lazy"></div>
+              <p class="caption">May the laughter, tenderness, and precious little moments of motherhood keep filling your days with joy.</p>
+            </div>
+            <span class="page-number">06</span>
+          </article>
+
+          <article class="page blessing-page" data-page="7" aria-label="Birthday blessing">
+            <div class="page-content centered">
+              <p class="eyebrow">A BIRTHDAY BLESSING</p>
+              <span class="page-flourish" aria-hidden="true">✦</span>
+              <h2>May grace meet you in every <em>season.</em></h2>
+              <p>May God bless the work of your hands, guard your heart with peace, and fill this new chapter with purpose, good health, meaningful joy, and the comfort of His presence.</p>
+              <blockquote>“This is the day which the Lord hath made; we will rejoice and be glad in it.”<cite>Psalm 118:24 · KJV</cite></blockquote>
+              <p class="signature">Happy Birthday, Momress.</p>
+            </div>
+            <span class="page-number">07</span>
+          </article>
+
+          <article class="page credits-page" data-page="8" aria-label="Media Team dedication">
+            <div class="page-content centered">
+              <div class="credits-mark" aria-hidden="true">✦</div>
+              <p class="eyebrow">WITH LOVE AND APPRECIATION</p>
+              <h2>Prepared on behalf of the <em>Media Team</em></h2>
+              <div class="gold-divider"></div>
+              <p>With heartfelt appreciation and prayers for a grace-filled year ahead.</p>
+              <p class="credits-signature">The Media Team</p>
+              <p class="credits-small">Celebrating Momress · A birthday keepsake</p>
+              <button class="text-button" id="back-to-cover" type="button">Return to the cover ↶</button>
+            </div>
+            <span class="page-number">08</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="reader-controls" aria-label="Book navigation">
+        <button class="nav-button" id="prev-page" type="button" aria-label="Previous page" disabled>← <span>Previous</span></button>
+        <div class="page-status" aria-live="polite"><span id="page-count">Cover</span><span class="progress-track"><span id="progress-fill"></span></span></div>
+        <button class="nav-button" id="next-page" type="button" aria-label="Next page"><span>Turn page</span> →</button>
+      </div>
+      <p class="gesture-hint">Swipe or use the arrows to turn pages</p>
+    </section>
+
+    <p id="music-notice" class="music-notice" aria-live="polite"></p>
+
+    <footer class="site-footer">
+      <span>Created with love for Momress</span>
+      <span class="footer-separator" aria-hidden="true">✦</span>
+      <span>Faith · Family · Gratitude</span>
+    </footer>
+  </main>
+
+  <audio id="birthday-music" src="assets/emotional-piano.mp3" preload="none" loop></audio>
+</body>
+</html>

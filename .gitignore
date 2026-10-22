@@ -1,0 +1,15 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Local tooling and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
