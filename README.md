@@ -11,7 +11,7 @@ A mobile-first birthday keepsake built with plain HTML, CSS, and JavaScript. The
 
 ## Included photographs
 
-The five supplied photographs have been copied into `assets/`:
+The five supplied photographs are kept at their provided image resolution in `assets/`. The family and couple images use the latest supplied files:
 
 - `portrait.jpg` — Momress speaking at a lectern
 - `family.jpg` — Momress, Shepo, and Moferejesu together
@@ -24,7 +24,7 @@ Two additional birthday portraits are included and featured in the welcome scree
 - `momress-portrait.jpg` — the color birthday portrait shown on the welcome screen and first photo page
 - `momress-portrait-bw.jpg` — the black-and-white portrait on its own keepsake page
 
-Photos on the book pages display in full without stretching, and a subtle zoom animation keeps them lively. The welcome portrait uses a close, framed crop so Momress is easy to see on a phone. The original photo files remain unchanged.
+Photos on the book pages display in full without stretching, and a subtle zoom animation keeps them lively. Chapter Two uses a larger portrait frame sized for the 768 × 1365 worship photo, so it is easy to see on a phone. The welcome portrait uses a close, framed crop so Momress is easy to see on a phone. The original photo files remain unchanged.
 
 ## Birthday music
 
