@@ -17,8 +17,9 @@
   const musicNotice = document.querySelector("#music-notice");
   const backToCover = document.querySelector("#back-to-cover");
 
-  const labels = ["Cover", "Dedication", "A woman worth celebrating", "Grace for the journey",
-    "The gift of family", "A love to treasure", "The beauty of motherhood", "Birthday blessing", "Media Team"];
+  const labels = ["Cover", "Birthday note", "A life worth celebrating", "Beautiful in every season",
+    "Grace for the journey", "The gift of family", "A love to treasure", "The joy of motherhood",
+    "Birthday blessing", "One last wish"];
   let currentPage = 0;
   let busy = false;
   let turningPage = null;
@@ -54,7 +55,7 @@
     nextButton.querySelector("span").textContent = currentPage === pages.length - 2 ? "Finish book" : "Turn page";
     if (currentPage === pages.length - 1) {
       nextButton.disabled = true;
-      pageCount.textContent = "The Media Team · Final page";
+      pageCount.textContent = "One last wish · Final page";
     }
   }
 

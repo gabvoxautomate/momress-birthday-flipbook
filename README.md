@@ -1,13 +1,13 @@
 # Momress — A Birthday Wrapped in Grace
 
-A mobile-first Christian birthday keepsake built with plain HTML, CSS, and JavaScript. The book contains a green hardcover, eight dedication and photo pages, a closing Media Team dedication, animated 3D page turns, page-edge tap and swipe navigation, softly breathing photographs, and optional background music.
+A mobile-first birthday keepsake built with plain HTML, CSS, and JavaScript. The book contains a green hardcover, nine dedication and photo pages, animated 3D page turns, page-edge tap and swipe navigation, softly breathing photographs, and optional background music.
 
 ## Project files
 
 - `index.html` — the welcome screen, book pages, and audio element
 - `css/style.css` — responsive paper, cover, layout, and 3D animation styles
 - `js/script.js` — page state, navigation, accessible feedback, and optional audio
-- `assets/` — the five supplied family photos and the supplied soundtrack
+- `assets/` — the family photographs, two birthday portraits, and soundtrack
 
 ## Included photographs
 
@@ -19,7 +19,12 @@ The five supplied photographs have been copied into `assets/`:
 - `birthday.jpg` — Momress and Moferejesu at his first birthday
 - `faith.jpg` — Momress in a moment of reflection or worship
 
-Every photo fits inside its page without cropping or stretching. The original image dimensions are preserved, and a subtle zoom animation keeps the photos lively. Frames adapt so landscape and portrait pictures both display in full.
+Two additional birthday portraits are included and featured in the welcome screen and book:
+
+- `momress-portrait.jpg` — the color birthday portrait shown on the welcome screen and first photo page
+- `momress-portrait-bw.jpg` — the black-and-white portrait on its own keepsake page
+
+Photos on the book pages display in full without stretching, and a subtle zoom animation keeps them lively. The welcome portrait uses a close, framed crop so Momress is easy to see on a phone. The original photo files remain unchanged.
 
 ## Birthday music
 
@@ -29,7 +34,7 @@ The supplied track is saved as `assets/emotional-piano.mp3`. It starts when the 
 
 Open `index.html` directly or use VS Code's Live Server extension. No install, build step, backend, or package manager is required. The folder can be deployed to a static host such as GitHub Pages or Vercel.
 
-Before public deployment, confirm that the family photographs and any added music are cleared for public use. The Media Team name and tribute wording can be edited directly in `index.html`.
+Before public deployment, confirm that the family photographs and any added music are cleared for public use. The birthday wishes and tribute wording can be edited directly in `index.html`.
 
 ## Quick checks
 
