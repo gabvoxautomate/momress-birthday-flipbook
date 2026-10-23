@@ -19,8 +19,9 @@
 
   const labels = ["Cover", "Birthday note", "A life worth celebrating", "Beautiful in every season",
     "Grace for the journey", "The gift of family", "A love to treasure", "The joy of motherhood",
-    "Birthday blessing", "One last wish"];
+    "Birthday blessing", "Media Team dedication"];
   let currentPage = 0;
+  let revealedPage = null;
   let busy = false;
   let turningPage = null;
   let startX = null;
@@ -37,17 +38,55 @@
     corner.className = "page-corner";
     corner.setAttribute("aria-hidden", "true");
     page.append(corner);
+
+    const content = page.querySelector(".page-content, .cover-inner");
+    if (content) {
+      const textNodes = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (textNodes.nextNode()) {
+        if (textNodes.currentNode.textContent.trim()) nodes.push(textNodes.currentNode);
+      }
+      let wordIndex = 0;
+      nodes.forEach(node => {
+        const fragment = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) {
+            fragment.append(document.createTextNode(part));
+            return;
+          }
+          const word = document.createElement("span");
+          word.className = "reveal-word";
+          word.style.setProperty("--word-index", String(wordIndex++));
+          word.textContent = part;
+          fragment.append(word);
+        });
+        node.replaceWith(fragment);
+      });
+    }
   });
 
   function renderState() {
     pages.forEach((page, index) => {
       const flipped = index < currentPage;
       page.classList.toggle("flipped", flipped);
+      page.classList.toggle("is-current", index === currentPage);
       const stackOrder = flipped ? index + 1 : pages.length - index + 10;
       page.style.zIndex = String(index === turningPage ? pages.length + 20 : stackOrder);
       page.setAttribute("aria-hidden", flipped ? "true" : "false");
       page.inert = flipped;
     });
+    if (revealedPage !== currentPage) {
+      const previousPage = pages[revealedPage];
+      if (previousPage) previousPage.classList.add("has-revealed");
+      revealedPage = currentPage;
+      const activePage = pages[currentPage];
+      if (activePage) {
+        activePage.classList.remove("has-revealed");
+        activePage.classList.remove("is-current");
+        window.requestAnimationFrame(() => activePage.classList.add("is-current"));
+      }
+    }
     prevButton.disabled = currentPage === 0 || busy;
     nextButton.disabled = currentPage === pages.length - 1 || busy;
     pageCount.textContent = `${labels[currentPage]} · ${currentPage}/${pages.length - 1}`;
@@ -55,7 +94,7 @@
     nextButton.querySelector("span").textContent = currentPage === pages.length - 2 ? "Finish book" : "Turn page";
     if (currentPage === pages.length - 1) {
       nextButton.disabled = true;
-      pageCount.textContent = "One last wish · Final page";
+      pageCount.textContent = "Media Team dedication · Final page";
     }
   }
 

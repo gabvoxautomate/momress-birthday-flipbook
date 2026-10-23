@@ -37,8 +37,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b99a5e; outline-offs
 .eyebrow { color: #92784a; font-size: .67rem; letter-spacing: .19em; line-height: 1.6; font-weight: 600; margin: 0 0 1rem; }
 .intro h1 { color: var(--green); font-family: var(--serif); font-size: clamp(3.4rem, 11vw, 7rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.02; margin: 0; }
 h1 em, h2 em { color: var(--gold); font-weight: 400; }
-.intro-portrait { width: clamp(130px, 19vw, 185px); aspect-ratio: .8; margin: 1rem auto .15rem; padding: 5px; border-radius: 90px 90px 5px 5px; box-shadow: 0 14px 28px rgba(23,61,50,.16); }
-.intro-portrait.photo-frame img { object-fit: cover; object-position: center 30%; border-radius: 85px 85px 2px 2px; background: #080707; }
+.intro-portrait { display: grid; place-items: center; width: clamp(130px, 19vw, 185px); aspect-ratio: .8; margin: 1rem auto .15rem; padding: 5px; border-radius: 90px 90px 5px 5px; box-shadow: 0 14px 28px rgba(23,61,50,.16); }
+.intro-portrait.photo-frame img { width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; object-position: center 28%; border-radius: 85px 85px 2px 2px; background: #080707; }
 .intro-subtitle { font-family: var(--serif); color: var(--green); font-size: clamp(1.1rem, 3vw, 1.65rem); margin: .5rem 0 .3rem; }
 .intro-copy { color: #686a62; max-width: 440px; line-height: 1.85; font-size: .96rem; margin: .4rem auto 1.7rem; }
 .primary-button { background: var(--green); color: #fffdf7; border: 1px solid var(--green); border-radius: 3px; padding: .95rem 1.4rem; min-height: 48px; cursor: pointer; letter-spacing: .015em; transition: transform .25s, background .25s, box-shadow .25s; box-shadow: 0 8px 20px rgba(23,61,50,.13); }
@@ -140,6 +140,16 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
 .missing-image { display: flex; align-items: center; justify-content: center; min-height: 130px; background: repeating-linear-gradient(135deg, #eee6d7, #eee6d7 12px, #f7f2e8 12px, #f7f2e8 24px); }
 .image-placeholder { padding: 1rem; color: #74664e; font-size: .75rem; text-align: center; line-height: 1.5; }
 @keyframes photo-breathe { from { transform: scale(.97); } to { transform: scale(1); } }
+.reveal-word { display: inline-block; opacity: 0; }
+.page.is-current .reveal-word {
+  animation: write-in .5s ease both;
+  animation-delay: calc(var(--word-index, 0) * 65ms);
+}
+.page.has-revealed .reveal-word { opacity: 1; }
+@keyframes write-in {
+  from { opacity: 0; transform: translateY(.28em); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
 @media (max-width: 560px), (max-height: 500px) and (orientation: landscape) {
   html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; }
   .experience { display: flex; flex-direction: column; width: 100%; height: 100vh; height: 100svh; min-height: 0; }
@@ -150,7 +160,7 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
   .intro-ornament { margin-bottom: .4rem; font-size: 1.4rem; }
   .intro .eyebrow { margin-bottom: .45rem; }
   .intro h1 { font-size: clamp(3rem, 12vw, 4.3rem); }
-  .intro-portrait { width: 108px; aspect-ratio: .82; margin: .45rem auto .05rem; padding: 4px; }
+  .intro-portrait { width: 108px; aspect-ratio: .8; margin: .45rem auto .05rem; padding: 4px; }
   .intro-subtitle { margin: .3rem 0 .1rem; font-size: clamp(1rem, 4.7vw, 1.35rem); }
   .intro-copy { max-width: 330px; margin: .2rem auto .55rem; font-size: .82rem; line-height: 1.45; }
   .primary-button { min-height: 44px; padding: .7rem 1.1rem; }
@@ -176,6 +186,8 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
   .signature { font-size: .78rem; margin-top: .35rem; }
   .credits-mark { font-size: 1.4rem; margin-bottom: .35rem; }
   .gold-divider { margin: .55rem auto; }
+  .credits-page .page-content h2 { font-size: clamp(1rem, 4.8vw, 1.4rem); }
+  .credits-page .page-content p:not(.eyebrow):not(.credits-signature):not(.credits-small) { font-size: .66rem; line-height: 1.3; }
   .credits-signature { font-size: 1.05rem; margin: .3rem 0; }
   .credits-small { font-size: .49rem; margin-top: .35rem; }
   .text-button { min-height: 38px; margin-top: .3rem; padding: .35rem .2rem; font-size: .7rem; }
@@ -195,6 +207,9 @@ blockquote cite { display: block; font-family: var(--sans); color: #9a8052; font
   .page-content { padding-inline: .58rem; }
   .page-content h2 { font-size: 1.1rem; }
   .caption { font-size: .62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-word { opacity: 1 !important; animation: none !important; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .reader:not(.hidden) { grid-template-rows: 0 minmax(0, 1fr) auto; }
